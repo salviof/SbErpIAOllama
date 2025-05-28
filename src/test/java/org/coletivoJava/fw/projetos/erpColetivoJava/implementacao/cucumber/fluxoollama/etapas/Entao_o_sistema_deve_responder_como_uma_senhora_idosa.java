@@ -1,6 +1,6 @@
 package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.etapas;
 
-import org.coletivoJava.fw.projetos.erpColetivoJava.api.cucumber.fluxoollama.EtapasFluxoOllama;
+import org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.EtapasFluxoOllama;
 import cucumber.api.java.pt.Entao;
 import java.lang.UnsupportedOperationException;
 

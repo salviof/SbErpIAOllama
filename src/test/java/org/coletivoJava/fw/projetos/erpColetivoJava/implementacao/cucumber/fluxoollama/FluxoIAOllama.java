@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.coletivoJava.fw.projetos.erpColetivoJava.api.cucumber.fluxoollama;
+package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
