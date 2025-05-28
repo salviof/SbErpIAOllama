@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package org.coletivoJava.fw.projetos.Intranet_Marketing_Digital.implementacao.cucumber.iaollama;
+
+import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
+import br.org.coletivoJava.fw.erp.implementacao.ia.IAOlhamaimpl;
+import br.org.coletivoJava.testes.erp.ConfigCoreApiErpIA;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
+import testesFW.cucumber.CucumberSBTestes;
+import testesFW.cucumber.TesteIntegracaoFuncionalidadeCucumber;
+
+/**
+ *
+ * @author salvio
+ */
+@RunWith(CucumberSBTestes.class)
+@CucumberOptions(features = "classpath:caracteristicas", tags = "@FluxoOllama",
+        glue = "org.coletivoJava.fw.projetos.Intranet_Marketing_Digital.implementacao.cucumber.iaollama.etapas",
+        monochrome = false, dryRun = false
+)
+public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
+
+    public static IAOlhamaimpl OLHAMA = (IAOlhamaimpl) ERPIA.OLHAMA.getImplementacaoDoContexto();
+
+    @Override
+    protected void configAmbienteDesevolvimento() {
+        SBCore.configurar(new ConfigCoreApiErpIA(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
+    }
+
+}
