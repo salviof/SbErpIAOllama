@@ -6,7 +6,8 @@
 package br.org.coletivoJava.testes.erp;
 
 //import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreDeProjetoJarAbstrato;
-import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreDeProjetoJarAbstrato;
+import br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes.FabAcaoIAOlhamaPersona;
+import com.super_bits.modulosSB.Persistencia.ConfigGeral.ConfiguradorCoreDeProjetoJarPersistenciaAbstrato;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 
 //import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
@@ -14,11 +15,15 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizav
  *
  * @author desenvolvedor
  */
-public class ConfigCoreApiErpIA extends ConfiguradorCoreDeProjetoJarAbstrato {
+public class ConfigCoreApiErpIA extends ConfiguradorCoreDeProjetoJarPersistenciaAbstrato {
 
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
-
+        pConfig.setClasseConfigPermissao(ConfigPermissaoIAOlhama.class);
+        pConfig.setFabricaDeAcoes(new Class[]{ //    FabAcaoIAOlhamaPersona.class
+        }
+        );
+        ;
     }
 
     //@Override

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.coletivoJava.fw.projetos.Intranet_Marketing_Digital.implementacao.cucumber.iaollama;
+package org.coletivoJava.fw.projetos.erpColetivoJava.api.cucumber.fluxoollama;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
@@ -25,7 +25,7 @@ import testesFW.cucumber.TesteIntegracaoFuncionalidadeCucumber;
  */
 @RunWith(CucumberSBTestes.class)
 @CucumberOptions(features = "classpath:caracteristicas", tags = "@FluxoOllama",
-        glue = "org.coletivoJava.fw.projetos.sberpiaollama.implementacao.cucumber.fluxoollama.etapas",
+        glue = "org.coletivoJava.fw.projetos.erpColetivoJava.api.cucumber.fluxoollama.etapas",
         monochrome = false, dryRun = false
 )
 public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
@@ -38,7 +38,7 @@ public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
 
     // 1-> CRIAR UMA FABRICA DE DAODOS INICIAIS COM UM USUARIO atendimento@casanovadigital.com.br
     // 2-> adicionar a fabrica no ConfigPercistenciaIa
-    // 3-> mover o objeto persona para este projeto.
+    // 3-> mover o objeto persona para este projeto. incluindo a entidade no perscistence.xml
     // 4-> implementar o InfocampoValorLogico, que vai gerar o pronto da persona para a IA.
     // 5-> implmentar os métodos que criam a persona,salvando a persona com o método ControllerIAPersonas.personaSalvar()
     // o persona salvar deve salvar no banco e atualizar o model na ia, se der erro ao salvar na IA,não deve permitir salvar a persona

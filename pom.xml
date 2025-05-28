@@ -35,8 +35,11 @@
         </dependency>
 
 
-
-
+        <dependency>
+            <groupId>br.org.coletivoJava.fw.modulos</groupId>
+            <artifactId>SBAcessosModel</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>br.org.coletivoJava.fw</groupId>
@@ -53,19 +56,13 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
             <version>4.11</version>
         </dependency>
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
-            <type>jar</type>
-        </dependency>
+
     </dependencies>
 
 

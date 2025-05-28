@@ -35,4 +35,9 @@ public class IAOlhamaimpl extends RepositorioLinkEntidadesGenerico
     public String obterRespostaUsuarioLogado(String s) {
         return null;
     }
+
+    @Override
+    public boolean personaCriarAtualizar(ItfPersona pPersona) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
