@@ -7,7 +7,6 @@ package br.org.coletivoJava.testes.erp;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import java.io.File;
 //import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import org.apache.logging.log4j.LogManager;
 import org.coletivojava.fw.api.objetoNativo.log.LogPadraoSB;
@@ -16,7 +15,6 @@ import testes.geradorCodigo.erp.GeradorERPImplementacaoContexto;
 import testes.geradorCodigo.erp.dto.GeradorDTOInterface;
 import testes.geradorCodigo.erp.dto.GeradorDTOPojo;
 import testes.geradorCodigo.erp.dto.GeradorDTOProcessador;
-import testesFW.ConfigCoreJunitPadraoDevAcaoPermissao;
 //import testesFW.geradorDeCodigo.erp.GeradorAPIERP;
 
 /**
