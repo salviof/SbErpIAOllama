@@ -5,6 +5,7 @@
 package org.coletivoJava.fw.projetos.Intranet_Marketing_Digital.implementacao.cucumber.iaollama;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
+import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
 import br.org.coletivoJava.fw.erp.implementacao.ia.IAOlhamaimpl;
 import br.org.coletivoJava.testes.erp.ConfigCoreApiErpIA;
 import br.org.coletivoJava.testes.erp.ConfigPercistenciaIa;
@@ -12,6 +13,7 @@ import com.super_bits.modulosSB.Persistencia.ConfigGeral.ConfigPersistenciaPadra
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
 import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
 import testesFW.cucumber.CucumberSBTestes;
@@ -30,6 +32,15 @@ public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
 
     public static IAOlhamaimpl OLHAMA = (IAOlhamaimpl) ERPIA.OLHAMA.getImplementacaoDoContexto();
 
+    public ItfPersona PERSONA1_ADOLECENTE;
+    public ItfPersona PERSONA2_IDOSO;
+    public ItfUsuario USUARIO_AUTENTICADO;
+
+    // 1-> CRIAR UMA FABRICA DE DAODOS INICIAIS COM UM USUARIO atendimento@casanovadigital.com.br
+    // 2-> adicionar a fabrica no ConfigPercistenciaIa
+    // 3 implmentar os métodos que criam a persona,salvando a persona com o método ControllerIAPersonas.personaSalvar()
+    // o persona salvar deve salvar no banco e atualizar o model na ia, se der erro ao salvar na IA,não deve permitir salvar a persona
+    // seguir o fluxo dos testes
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(new ConfigCoreApiErpIA(), SBCore.ESTADO_APP.DESENVOLVIMENTO);

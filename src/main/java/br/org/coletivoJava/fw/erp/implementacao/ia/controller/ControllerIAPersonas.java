@@ -19,7 +19,7 @@ import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.ErroRegraDeNego
 public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
 
     @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_SALVAR_MERGE)
-    public static ItfRespostaAcaoDoSistema disponibilidadeAtendimentoMerge(ItfPersona pPersona) {
+    public static ItfRespostaAcaoDoSistema personaSalvar(ItfPersona pPersona) {
         return new RespostaComGestaoEMRegraDeNegocioPadrao(getNovaRespostaAutorizaChecaNulo(pPersona), pPersona) {
             @Override
             public void regraDeNegocio() throws ErroRegraDeNegocio {
