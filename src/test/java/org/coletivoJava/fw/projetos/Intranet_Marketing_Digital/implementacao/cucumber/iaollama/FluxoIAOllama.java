@@ -38,7 +38,9 @@ public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
 
     // 1-> CRIAR UMA FABRICA DE DAODOS INICIAIS COM UM USUARIO atendimento@casanovadigital.com.br
     // 2-> adicionar a fabrica no ConfigPercistenciaIa
-    // 3 implmentar os métodos que criam a persona,salvando a persona com o método ControllerIAPersonas.personaSalvar()
+    // 3-> mover o objeto persona para este projeto.
+    // 4-> implementar o InfocampoValorLogico, que vai gerar o pronto da persona para a IA.
+    // 5-> implmentar os métodos que criam a persona,salvando a persona com o método ControllerIAPersonas.personaSalvar()
     // o persona salvar deve salvar no banco e atualizar o model na ia, se der erro ao salvar na IA,não deve permitir salvar a persona
     // seguir o fluxo dos testes
     @Override
