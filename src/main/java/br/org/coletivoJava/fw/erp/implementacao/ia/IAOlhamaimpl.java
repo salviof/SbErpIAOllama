@@ -8,12 +8,17 @@ import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.erp.reposito
 import br.org.coletivoJava.fw.api.erp.ia.IAOlhama;
 
 @IAOlhama
-public class IAOlhamaimpl extends RepositorioLinkEntidadesGenerico implements ItfErpIA {
+public class IAOlhamaimpl extends RepositorioLinkEntidadesGenerico implements ItfErpIA  {
+
 
     @Override
-    public String obterResposta(Persona pPersona, ItfUsuario itfUsuario,
-                                String s) {
-        return null;
+    public boolean personaCriarAtualizar(ItfPersona itfPersona) {
+        return false;
+    }
+
+    @Override
+    public String obterResposta(ItfPersona itfPersona, ItfUsuario itfUsuario, String s) {
+        return "";
     }
 
     @Override
@@ -24,19 +29,13 @@ public class IAOlhamaimpl extends RepositorioLinkEntidadesGenerico implements It
     }
 
     @Override
-    public String obterRespostaUsuarioLogado(
-            Persona pPersona,
-            String s) {
-        return null;
-    }
-
-    @Override
     public String obterRespostaUsuarioLogado(String s) {
-        return null;
+        return "";
     }
 
     @Override
-    public boolean personaCriarAtualizar(Persona pPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String obterRespostaUsuarioLogado(ItfPersona itfPersona, String s) {
+        return "";
     }
+
 }

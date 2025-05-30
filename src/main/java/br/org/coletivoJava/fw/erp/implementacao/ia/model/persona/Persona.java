@@ -1,10 +1,12 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.model.persona;
 
+import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampoValorLogico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +14,7 @@ import javax.persistence.Id;
 
 @Entity
 @InfoObjetoSB(plural = "Personas", tags = "Persona", icone = "fa fa-users")
-public class Persona extends EntidadeSimples {
+public class Persona extends EntidadeSimples implements ItfPersona {
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;
