@@ -6,14 +6,13 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampoValorLogico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@InfoObjetoSB(plural = "Personas", tags = "Persona", icone = "fa fa-users")
+@InfoObjetoSB(plural = "Personas ", tags = "Persona", icone = "fa fa-users")
 public class Persona extends EntidadeSimples implements ItfPersona {
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
@@ -47,7 +46,6 @@ public class Persona extends EntidadeSimples implements ItfPersona {
     private String publicoAlvo;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES, descricao = "Idioma padrão em que a persona interagirá.", label = "Idioma Padrão")
-    // TODO: depois conferir se vai ser enum
     private String idioma;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES, descricao = "Tipos de respostas padrões que a IA irá fornecer de acordo com certas perguntas", label = "Tipos de resposta padrao")
