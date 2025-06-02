@@ -15,18 +15,18 @@
         <projetoSB.grupoProjeto>erpColetivoJava</projetoSB.grupoProjeto>
     </properties>
 
-
-
     <dependencies>
-
-
-
         <dependency>
             <groupId>br.org.coletivoJava.fw</groupId>
             <artifactId>SBApiCore</artifactId>
             <version>1.0.0-RC-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>br.org.coletivoJava.fw.integracoes</groupId>
+            <artifactId>intOllama</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>br.org.coletivoJava.fw.api.erp.ia</groupId>
@@ -34,13 +34,17 @@
             <version>1.0.0-RC-SNAPSHOT</version>
         </dependency>
 
-
         <dependency>
             <groupId>br.org.coletivoJava.fw</groupId>
             <artifactId>SBRestClient</artifactId>
             <version>1.0.0-RC-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>br.org.coletivoJava.fw</groupId>
+            <artifactId>SBPersistencia</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>br.org.coletivoJava.fw.modulos</groupId>

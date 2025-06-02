@@ -5,6 +5,7 @@
  */
 package br.org.coletivoJava.testes.erp;
 
+import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabGrupoUsuario;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabUsuarioPadrao;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreDataHora;
@@ -14,7 +15,7 @@ import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
  *
  * @author Salvio
  */
-public class ConfigPercistenciaIa implements ItfConfigSBPersistencia {
+public class ConfigPersistenciaIa implements ItfConfigSBPersistencia {
 
     @Override
     public String bancoPrincipal() {
@@ -49,6 +50,7 @@ public class ConfigPercistenciaIa implements ItfConfigSBPersistencia {
     @Override
     public Class<? extends ItfFabrica>[] fabricasRegistrosIniciais() {
         return new Class[]{
+                FabGrupoUsuario.class,
                 FabUsuarioPadrao.class
         };
     }
