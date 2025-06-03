@@ -1,14 +1,21 @@
 package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.etapas;
 
+import br.org.coletivoJava.fw.erp.implementacao.ia.controller.ControllerIAPersonas;
+import br.org.coletivoJava.fw.erp.implementacao.ia.utils.UtilPersona;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfRespostaAcaoDoSistema;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllama;
 import cucumber.api.java.pt.Quando;
+import org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.FluxoIAOllama;
+import org.junit.Assert;
+
 import java.lang.UnsupportedOperationException;
 
 public class G_Quando_o_usuario_envia_a_mensagem_para_Maria_perguntando_nome_e_idade {
 
 	@Quando(EtapasFluxoOllama.QUANDO_O_USUARIO_ENVIA_A_MENSAGEM_PARA_MARIA_PERGUNTANDO_NOME_E_IDADE)
 	public void implementacaoEtapa() {
-		throw new UnsupportedOperationException(
-				"Etapa 'o usuario  envia a mensagem para Maria perguntando nome e idade' não implementadas");
+		ItfRespostaAcaoDoSistema resposta = ControllerIAPersonas.conversaChatComHistorico(FluxoIAOllama.PERSONA2_IDOSO	, "Qual seu nome e sua idade? Responda apenas com 3 palavras", SBCore.getUsuarioLogado(), UtilPersona.gerarPromptSystem(FluxoIAOllama.PERSONA2_IDOSO)); // colocar o valor logico aqui
+		Assert.assertTrue(resposta.isSucesso());
 	}
 }

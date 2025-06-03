@@ -42,7 +42,6 @@ public class IAOlhamaimpl extends RepositorioLinkEntidadesGenerico implements It
             UtilOllamaConversas.adicionarMensagem(pChaveConversa, "assistant", respostaJson.toString(), null, null);
         }
         return respostaJson.getString("response");
-
     }
 
     @Override
