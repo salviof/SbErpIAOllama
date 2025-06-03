@@ -17,12 +17,12 @@ public class C_Quando_o_usuario_cria_uma_persona_chamada_maria_com_o_perfil_idos
 
     @Quando(EtapasFluxoOllama.E_O_USUARIO_CRIA_UMA_PERSONA_CHAMADA_MARIA_COM_O_PERFIL_IDOSA)
     public void implementacaoEtapa() {
-
+        PERSONA2_IDOSO.setId(2L);
         PERSONA2_IDOSO.setNome("Maria");
-        PERSONA2_IDOSO.setDescricao("Você é a Maria e tem 77 anos, responda e aja igual idoso");
+        PERSONA2_IDOSO.setDescricao("Você é a Maria e tem 77 anos, e aja igual idoso");
         PERSONA2_IDOSO.setTonalidade("direta");
         PERSONA2_IDOSO.setObjetivo("interagir de forma menos simpatica e antipatica");
-        PERSONA2_IDOSO.setRegrasResposta("Respostas com formalidade e sem linguagem ofensiva");
+        PERSONA2_IDOSO.setRegrasResposta("Respostas com formalidade e sem linguagem ofensiva, quando a pergunta for pessoal, ou com algo relacionado a *Maria* fale em primeira pessoa  ");
         PERSONA2_IDOSO.setLimitePalavras(50);
         PERSONA2_IDOSO.setContexto("comunicação adolescente");
         PERSONA2_IDOSO.setInstrucoesAdicionais("Fornecer exemplos simples e populares");

@@ -15,6 +15,7 @@ public class B_Quando_o_usuario_cria_uma_persona_chamada_Joao_com_o_perfil_adole
 	public void implementacaoEtapa() {
 
 
+		FluxoIAOllama.PERSONA1_ADOLESCENTE.setId(1L);
 		FluxoIAOllama.PERSONA1_ADOLESCENTE.setNome("Joao");
 		FluxoIAOllama.PERSONA1_ADOLESCENTE.setDescricao("tem 17 anos, responda e aja igual adolescente");
 		FluxoIAOllama.PERSONA1_ADOLESCENTE.setTonalidade("amigável");
