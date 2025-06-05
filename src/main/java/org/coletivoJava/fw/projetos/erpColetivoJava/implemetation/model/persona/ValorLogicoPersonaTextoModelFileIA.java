@@ -16,7 +16,6 @@ public class ValorLogicoPersonaTextoModelFileIA extends ValorLogicoCalculoGeneri
 
 	@Override
 	public Object getValor(Object... pEntidade) {
-		//TODO: FAZER O VALOR
 		return getPersona().getDescricao();
 	}
 	public Persona getPersona() {
