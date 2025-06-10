@@ -1,8 +1,7 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.utils;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
-import br.org.coletivoJava.integracoes.ollama.api.util.UtilOllamaConversas;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.AssuntosPersona;
 import jakarta.json.*;
 
 import java.io.File;
@@ -82,8 +81,8 @@ public class UtilHistoricoConversa {
 
     public static JsonObject carregarHistoricoConversa(String pChaveConversa, ItfPersona itfPersona, String pMensagem, String pPromptSystem) {
         JsonObject conversa = carregarConversaExistente(pChaveConversa);
-        if(conversa == null) {
-            conversa = criarNovaConversa(pChaveConversa, pPromptSystem, itfPersona.getNome() + "latest");
+        if (conversa == null) {
+            conversa = criarNovaConversa(pChaveConversa, pPromptSystem, itfPersona.getNome() + ":latest");
         }
 
         adicionarMensagem(pChaveConversa, "user", pMensagem);
@@ -108,6 +107,10 @@ public class UtilHistoricoConversa {
 //        mensagens.forEach(builder::add);
 //        String ultimaMensagem = mensagens.getJsonObject(mensagens.size() - 1).getString("content");
 
+    }
+
+    public static void carregarNovoSystem(String pChaveConversa, String pDescricao) {
+        adicionarMensagem(pChaveConversa, "system", "Assunto adicional detectado: " + pDescricao);
     }
 
     public static String carregarPersona(String pConfiguracaoPersona) {

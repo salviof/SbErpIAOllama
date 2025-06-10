@@ -1,8 +1,13 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.utils;
 
+import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.AssuntosPersona;
+import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.FabAssuntosGenericos;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
 
-public class UtilPersona {
+import java.util.ArrayList;
+import java.util.List;
+
+public class UtilConfiguracoesIA {
 
     public static String gerarPromptSystem(Persona pPersona) {
         StringBuilder prompt = new StringBuilder();
@@ -46,4 +51,32 @@ public class UtilPersona {
         System.out.println("Prompt: " + prompt.toString().trim());
         return prompt.toString().trim();
     }
+
+    public static String gerarPromptSystemComAssuntos() {
+        StringBuilder prompt = new StringBuilder();
+        List<AssuntosPersona> assuntos = gerarAssuntosPadrao();
+        prompt.append("Você é uma inteligência artificial treinada para responder sobre os seguintes assuntos relacionados ao nosso negócio:\n\n");
+        for (AssuntosPersona assunto : assuntos) {
+            prompt.append("Assunto: ").append(assunto.getAssunto()).append("\n");
+            prompt.append("Descrição: ").append(assunto.getDescricao()).append("\n");
+        }
+
+        prompt.append("Seja preciso e educado. Se nao souber ou o assunto nao for igual a estes, responda: *Não fui configurado para esse tipo de assunto*");
+        return prompt.toString();
+    }
+
+    private static List<AssuntosPersona> gerarAssuntosPadrao() {
+        List<AssuntosPersona> assuntos = new ArrayList<>();
+        AssuntosPersona assuntoProdutos = (AssuntosPersona) FabAssuntosGenericos.ASSUNTO_PRODUTO.getRegistro();
+        AssuntosPersona assuntoSuporte = (AssuntosPersona) FabAssuntosGenericos.ASSUNTO_SUPORTE.getRegistro();
+        AssuntosPersona assuntoAgendamento = (AssuntosPersona) FabAssuntosGenericos.ASSUNTO_AGENDAMENTO.getRegistro();
+
+        assuntos.add(assuntoProdutos);
+//        assuntos.add(assuntoSuporte);
+//        assuntos.add(assuntoAgendamento);
+
+        return assuntos;
+    }
+
+
 }
