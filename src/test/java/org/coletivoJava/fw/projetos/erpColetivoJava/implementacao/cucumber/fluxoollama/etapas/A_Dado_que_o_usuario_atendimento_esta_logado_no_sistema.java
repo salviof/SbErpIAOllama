@@ -1,13 +1,11 @@
 package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.etapas;
 
-import br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes.FabAcaoIAOlhamaPersona;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabUsuarioPadrao;
 import br.org.coletivoJava.integracoes.ollama.api.chat.FabConfigOllama;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllama;
 import cucumber.api.java.pt.Dado;
-import org.junit.Assert;
 
 import static org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.FluxoIAOllama.USUARIO_AUTENTICADO;
 import static org.junit.Assert.assertEquals;
@@ -23,7 +21,6 @@ public class A_Dado_que_o_usuario_atendimento_esta_logado_no_sistema {
         SBCore.getServicoSessao().getSessaoAtual().getUsuario();
         SBCore.getServicoSessao().getSessaoAtual().isIdentificado();
 
-        String caminhoArquivoConfig = SBCore.getConfigModulo(FabConfigOllama.class).getPatchArquivoConfig();
         assertTrue("O usuario deve estar logado", SBCore.getServicoSessao().getSessaoAtual().isIdentificado());
     }
 }

@@ -19,7 +19,7 @@ public class B_Quando_o_usuario_faz_uma_pergunta_sobre_um_dos_assuntos {
 
         PERSONA_IA.setId(1L);
         PERSONA_IA.setNome("CasanovaIA");
-        String resposta = FluxoIAOllama.OLHAMA.obterResposta(PERSONA_IA, SBCore.getUsuarioLogado(), "Quais serviços a empresa oferece?");
+        String resposta = FluxoIAOllama.OLHAMA.obterResposta(PERSONA_IA, SBCore.getUsuarioLogado(), "Quais serviços vocês oferecem?");
         Assert.assertNotNull("A resposta veio nula: ", resposta);
     }
 }

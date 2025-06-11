@@ -1,7 +1,6 @@
 package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.etapas;
 
 import br.org.coletivoJava.fw.erp.implementacao.ia.controller.ControllerIAPersonas;
-import br.org.coletivoJava.fw.erp.implementacao.ia.utils.UtilPersona;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfRespostaAcaoDoSistema;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllama;
