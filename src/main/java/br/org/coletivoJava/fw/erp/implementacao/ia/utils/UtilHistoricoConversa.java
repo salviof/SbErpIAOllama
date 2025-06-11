@@ -79,10 +79,10 @@ public class UtilHistoricoConversa {
         salvarConversa(pChave, novaConversa);
     }
 
-    public static JsonObject carregarHistoricoConversa(String pChaveConversa, ItfPersona itfPersona, String pMensagem, String pPromptSystem) {
+    public static JsonObject carregarHistoricoConversa(String pChaveConversa, ItfPersona pPersona, String pMensagem, String pPromptSystem) {
         JsonObject conversa = carregarConversaExistente(pChaveConversa);
         if (conversa == null) {
-            conversa = criarNovaConversa(pChaveConversa, pPromptSystem, itfPersona.getNome() + ":latest");
+            conversa = criarNovaConversa(pChaveConversa, pPromptSystem, pPersona.getNome() + ":latest");
         }
 
         adicionarMensagem(pChaveConversa, "user", pMensagem);
@@ -91,22 +91,13 @@ public class UtilHistoricoConversa {
 
         JsonArrayBuilder builder = Json.createArrayBuilder();
         mensagens.forEach(builder::add);
-        return Json.createObjectBuilder()
-                .add("model", itfPersona.getNome() + ":latest")
+        JsonObject aa = Json.createObjectBuilder()
+                .add("model", pPersona.getNome() + ":latest")
                 .add("messages", builder.build())
                 .add("stream", false)
                 .add("keep_alive", "10m")
                 .build();
-
-
-        //        UtilOllamaConversas.adicionarMensagem(pChaveConversa, "user", pMensagem, pPromptSystem, "tinnyllama:1.1b");
-//        JsonObject conversaAtualizada = UtilOllamaConversas.lerConversa(pChaveConversa, pPromptSystem, itfPersona.getNome() + ":latest");
-//        JsonObject conversaAtualizada = UtilOllamaConversas.lerConversa(pChaveConversa, pPromptSystem, "tinnyllama:1.1b");
-//        JsonArray mensagens = conversaAtualizada.getJsonArray("messages");
-//        JsonArrayBuilder builder = Json.createArrayBuilder();
-//        mensagens.forEach(builder::add);
-//        String ultimaMensagem = mensagens.getJsonObject(mensagens.size() - 1).getString("content");
-
+        return aa;
     }
 
     public static void carregarNovoSystem(String pChaveConversa, String pDescricao) {

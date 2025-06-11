@@ -3,6 +3,7 @@ package br.org.coletivoJava.fw.erp.implementacao.ia.utils;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.AssuntosPersona;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.FabAssuntosGenericos;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +53,11 @@ public class UtilConfiguracoesIA {
         return prompt.toString().trim();
     }
 
-    public static String gerarPromptSystemComAssuntos() {
+    public static String gerarPromptSystemComAssuntos(ItfUsuario pUsuario) {
         StringBuilder prompt = new StringBuilder();
         List<AssuntosPersona> assuntos = gerarAssuntosPadrao();
         prompt.append("Você é uma inteligência artificial treinada para responder sobre os seguintes assuntos relacionados ao nosso negócio:\n\n");
+        prompt.append("E está conversando com o usuario *").append(pUsuario.getNome()).append("* seu email é ").append(pUsuario.getEmail()).append("e seu telefone é ").append(pUsuario.getTelefone()).append(" \n\n");
         for (AssuntosPersona assunto : assuntos) {
             prompt.append("Assunto: ").append(assunto.getAssunto()).append("\n");
             prompt.append("Descrição: ").append(assunto.getDescricao()).append("\n");
@@ -72,8 +74,6 @@ public class UtilConfiguracoesIA {
         AssuntosPersona assuntoAgendamento = (AssuntosPersona) FabAssuntosGenericos.ASSUNTO_AGENDAMENTO.getRegistro();
 
         assuntos.add(assuntoProdutos);
-//        assuntos.add(assuntoSuporte);
-//        assuntos.add(assuntoAgendamento);
 
         return assuntos;
     }
