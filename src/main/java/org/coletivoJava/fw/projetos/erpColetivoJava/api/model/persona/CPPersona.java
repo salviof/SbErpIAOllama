@@ -5,10 +5,11 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 
 @InfoReferenciaEntidade(tipoObjeto = Persona.class)
 public enum CPPersona {
-	_ID, _NOME, _DESCRICAO, _TONALIDADE, _OBJETIVO, _REGRASRESPOSTA, _LIMITEPALAVRAS, _CONTEXTO, _INSTRUCOESADICIONAIS, _PUBLICOALVO, _IDIOMA, _TIPORESPOSTASPADRAO, _PALAVRASPROIBIDAS, _STATUS, _TEXTOMODELFILEIA;
+	_ID, _NOME, _TIPOPERSONA, _DESCRICAO, _TONALIDADE, _OBJETIVO, _REGRASRESPOSTA, _LIMITEPALAVRAS, _CONTEXTO, _INSTRUCOESADICIONAIS, _PUBLICOALVO, _IDIOMA, _TIPORESPOSTASPADRAO, _PALAVRASPROIBIDAS, _STATUS, _TEXTOMODELFILEIA, _ASSUNTOS;
 
 	public static final String id = "id";
 	public static final String nome = "nome";
+	public static final String tipopersona = "tipoPersona";
 	public static final String descricao = "descricao";
 	public static final String tonalidade = "tonalidade";
 	public static final String objetivo = "objetivo";
@@ -22,4 +23,5 @@ public enum CPPersona {
 	public static final String palavrasproibidas = "palavrasProibidas";
 	public static final String status = "status";
 	public static final String textomodelfileia = "textoModelFileIA";
+	public static final String assuntos = "assuntos";
 }

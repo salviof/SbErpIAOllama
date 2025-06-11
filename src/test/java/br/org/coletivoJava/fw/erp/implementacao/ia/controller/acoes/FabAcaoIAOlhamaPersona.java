@@ -11,9 +11,9 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcao
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
+import org.coletivoJava.fw.projetos.erpColetivoJava.api.model.persona.CPPersona;
 
 /**
- *
  * @author salvio
  */
 @InfoModulosIaOlhama(modulo = FabModulosIA.ERP_IA)
@@ -27,20 +27,22 @@ public enum FabAcaoIAOlhamaPersona implements ItfFabricaDeAcoesPersistencia {
     @InfoTipoAcaoFormulario()
     USUARIO_FRM_EDITAR,
     USUARIO_CTR_SALVAR_MERGE,
-    @InfoTipoAcaoController(comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO, fraseComunicação = "A exclusão, será permanente, tem certeza que deseja EXCLUIR o [nome]")
+    @InfoTipoAcaoController(comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO, fraseComunicação = "A exclusão, será permanente, tem certeza que deseja EXCLUIR o [nome]?")
     USUARIO_CTR_EXCLUIR,
     @InfoTipoAcaoController()
     USUARIO_CTR_ALTERAR_STATUS,
-
     @InfoTipoAcaoGestaoEntidade(entidade = Persona.class, nomeAcao = "Gerenciar Personas")
     PERSONA_IA_MB_GESTAO,
-    @InfoTipoAcaoFormulario() //TODO: Adicionar campos
+    @InfoTipoAcaoFormulario(campos = {CPPersona.id, CPPersona.nome, CPPersona.descricao, CPPersona.contexto, CPPersona.idioma, CPPersona.instrucoesadicionais, CPPersona.limitepalavras}) //TODO: Adicionar campos
     PERSONA_IA_FRM_LISTAR,
     @InfoTipoAcaoFormulario() //TODO: Adicionar campos
     PERSONA_IA_FRM_NOVO,
     @InfoTipoAcaoFormulario() //TODO: Adicionar campos
     PERSONA_IA_FRM_EDITAR,
     PERSONA_IA_CTR_OBTER_RESPOSTA,
+    //    PERSONA_IA_CTR_OBTER_RESPOSTA_SEM_HISTORICO,
     PERSONA_IA_CTR_CHAT_SESSAO_CONVERSA,
+    @InfoTipoAcaoController(comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO, fraseComunicação = "Tem certeza que deseja EXCLUIR o modelo de IA [nome]?")
+    PERSONA_IA_CTR_REMOVER,
     PERSONA_IA_CTR_SALVAR_MERGE;
 }

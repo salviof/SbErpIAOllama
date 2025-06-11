@@ -30,21 +30,11 @@ public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
 
             @Override
             public void regraDeNegocio() throws ErroRegraDeNegocio {
-               // ERPIA.OLHAMA.getImplementacaoDoContexto().personaCriarAtualizar(pPersona.getNome(), UtilPersona.gerarPromptSystem(pPersona));
+                // ERPIA.OLHAMA.getImplementacaoDoContexto().personaCriarAtualizar(pPersona.getNome(), UtilPersona.gerarPromptSystem(pPersona));
                 setRetorno(atualizarEntidade(pPersona, true));
             }
         }.getResposta();
 
-    }
-
-    @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_OBTER_RESPOSTA)
-    public static ItfRespostaAcaoDoSistema novaConversa(Persona pPersona, String pMensagem) {
-        return new RespostaComGestaoEMRegraDeNegocioPadrao(getNovaRespostaAutorizaChecaNulo(pPersona), pPersona) {
-            @Override
-            public void regraDeNegocio() throws ErroRegraDeNegocio {
-                ERPIA.OLHAMA.getImplementacaoDoContexto().obterResposta(pPersona.getNome(), pMensagem);
-            }
-        }.getResposta();
     }
 
     @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_CHAT_SESSAO_CONVERSA)
@@ -68,10 +58,9 @@ public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
                         .add("stream", false)
                         .add("keep_alive", "10m")
                         .build();
-
                 String ultimaMensagem = mensagens.getJsonObject(mensagens.size() - 1).getString("content");
 
-                String respostaIA = ERPIA.OLHAMA.getImplementacaoDoContexto().obterResposta(pPersona.getNome() + ":latest", chaveConversa, ultimaMensagem, pPromptSystem);
+                String respostaIA = ERPIA.OLHAMA.getImplementacaoDoContexto().obterResposta(pPersona, pUsuario, pPromptSystem);
                 System.out.println("Resposta IA: " + respostaIA);
             }
         }.getResposta();
@@ -89,15 +78,5 @@ public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
 //        }.getResposta();
 //    }
 
-    @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_REMOVER)
-    public static ItfRespostaAcaoDoSistema removerPersona(Persona pPersona) {
-        return new RespostaComGestaoEMRegraDeNegocioPadrao(getNovaRespostaAutorizaChecaNulo(pPersona), pPersona) {
-            @Override
-            public void regraDeNegocio() throws ErroRegraDeNegocio {
-                boolean resposta = ERPIA.OLHAMA.getImplementacaoDoContexto().removerPersona(pPersona.getNome() + ":latest");
-                setRetorno(resposta);
-            }
-        }.getResposta();
-    }
 
 }
