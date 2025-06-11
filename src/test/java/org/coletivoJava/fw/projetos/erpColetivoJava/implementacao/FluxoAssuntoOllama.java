@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama;
+package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ERPIA;
 import br.org.coletivoJava.fw.erp.implementacao.ia.IAOlhamaImpl;
@@ -17,23 +13,19 @@ import org.junit.runner.RunWith;
 import testesFW.cucumber.CucumberSBTestes;
 import testesFW.cucumber.TesteIntegracaoFuncionalidadeCucumber;
 
-
 @RunWith(CucumberSBTestes.class)
-@CucumberOptions(features = "classpath:caracteristicas", tags = "@FluxoOllama",
-        glue = "org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollama.etapas",
+@CucumberOptions(features = "classpath:caracteristicas", tags = "@FluxoOllamaAssunto",
+        glue = "org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.fluxoollamaassunto.etapas",
         monochrome = false, dryRun = false
 )
-public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
-    public static IAOlhamaImpl OLHAMA= (IAOlhamaImpl) ERPIA.OLHAMA.getImplementacaoDoContexto();
-    public static Persona PERSONA1_ADOLESCENTE = new Persona();
-    public static Persona PERSONA2_IDOSO = new Persona();
+public class FluxoAssuntoOllama extends TesteIntegracaoFuncionalidadeCucumber {
     public static ItfUsuario USUARIO_AUTENTICADO;
-
+    public static IAOlhamaImpl OLLAMA = (IAOlhamaImpl) ERPIA.OLHAMA.getImplementacaoDoContexto();
+    public static Persona PERSONA_IA = new Persona();
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(new ConfigCoreApiErpIA(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
         gerarCodigoModelProjeto();
         SBPersistencia.configuraJPA(new ConfigPersistenciaIa());
     }
-
 }

@@ -4,15 +4,17 @@ import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimple
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
-import net.bytebuddy.utility.nullability.MaybeNull;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.List;
 
 @Entity
-@InfoObjetoSB(plural = "Assuntos de persona",tags = "Assunto de persona")
+@InfoObjetoSB(plural = "Assuntos de persona", tags = "Assunto de persona")
 public class AssuntosPersona extends EntidadeSimples {
     @Id
-    @InfoCampo(tipo =FabTipoAtributoObjeto.ID)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;
     @InfoCampo(tipo = FabTipoAtributoObjeto.NOME)
     @Column(length = 100)
@@ -20,8 +22,6 @@ public class AssuntosPersona extends EntidadeSimples {
 
     @Column(length = 5000)
     private String descricao;
-
-
 
     @Override
     public Long getId() {
@@ -48,6 +48,5 @@ public class AssuntosPersona extends EntidadeSimples {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
 
 }

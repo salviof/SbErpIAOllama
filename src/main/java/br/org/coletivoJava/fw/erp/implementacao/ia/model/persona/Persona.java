@@ -7,12 +7,13 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @InfoObjetoSB(plural = "Personas ", tags = "Persona", icone = "fa fa-users")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipoPersona")
 public class Persona extends EntidadeSimples implements ItfPersona {
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
@@ -20,6 +21,9 @@ public class Persona extends EntidadeSimples implements ItfPersona {
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.NOME)
     private String nome;
+
+    @Column(nullable = false, updatable = false, insertable = false)
+    private String tipoPersona;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.DESCRITIVO, descricao = "Curta descrição que define a persona de forma clara.", label = "Descrição")
     private String descricao;
@@ -61,6 +65,16 @@ public class Persona extends EntidadeSimples implements ItfPersona {
     @InfoCampoValorLogico(nomeCalculo = "Texto modelfile ")
     private String textoModelFileIA;
 
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(name = "persona_assunto", joinColumns = {@JoinColumn(name = "persona_id")},
+            inverseJoinColumns = {@JoinColumn(name = "assunto_id")})
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS)
+    private List<AssuntosPersona> assuntos;
+
+    public List<AssuntosPersona> getAssuntos() {
+        return assuntos;
+    }
+
     @Override
     public Long getId() {
         return id;
@@ -81,107 +95,147 @@ public class Persona extends EntidadeSimples implements ItfPersona {
         this.nome = nome;
     }
 
+    @Override
+    public String getTipoPersona() {
+        return tipoPersona;
+    }
+
+    @Override
+    public void setTipoPersona(String tipoPersona) {
+        this.tipoPersona = tipoPersona;
+    }
+
+    @Override
     public String getDescricao() {
         return descricao;
     }
 
+    @Override
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
+    @Override
     public String getTonalidade() {
         return tonalidade;
     }
 
+    @Override
     public void setTonalidade(String tonalidade) {
         this.tonalidade = tonalidade;
     }
 
+    @Override
     public String getObjetivo() {
         return objetivo;
     }
 
+    @Override
     public void setObjetivo(String objetivo) {
         this.objetivo = objetivo;
     }
 
+    @Override
     public String getRegrasResposta() {
         return regrasResposta;
     }
 
+    @Override
     public void setRegrasResposta(String regrasResposta) {
         this.regrasResposta = regrasResposta;
     }
 
+    @Override
     public int getLimitePalavras() {
         return limitePalavras;
     }
 
+    @Override
     public void setLimitePalavras(int limitePalavras) {
         this.limitePalavras = limitePalavras;
     }
 
+    @Override
     public String getContexto() {
         return contexto;
     }
 
+    @Override
     public void setContexto(String contexto) {
         this.contexto = contexto;
     }
 
+    @Override
     public String getInstrucoesAdicionais() {
         return instrucoesAdicionais;
     }
 
+    @Override
     public void setInstrucoesAdicionais(String instrucoesAdicionais) {
         this.instrucoesAdicionais = instrucoesAdicionais;
     }
 
+    @Override
     public String getPublicoAlvo() {
         return publicoAlvo;
     }
 
+    @Override
     public void setPublicoAlvo(String publicoAlvo) {
         this.publicoAlvo = publicoAlvo;
     }
 
+    @Override
     public String getIdioma() {
         return idioma;
     }
 
+    @Override
     public void setIdioma(String idioma) {
         this.idioma = idioma;
     }
 
+    @Override
     public String getTipoRespostasPadrao() {
         return tipoRespostasPadrao;
     }
 
+    @Override
     public void setTipoRespostasPadrao(String tipoRespostasPadrao) {
         this.tipoRespostasPadrao = tipoRespostasPadrao;
     }
 
+    @Override
     public String getPalavrasProibidas() {
         return palavrasProibidas;
     }
 
+    @Override
     public void setPalavrasProibidas(String palavrasProibidas) {
         this.palavrasProibidas = palavrasProibidas;
     }
 
+    @Override
     public boolean isStatus() {
         return status;
     }
 
+    @Override
     public void setStatus(boolean status) {
         this.status = status;
     }
 
+    @Override
     public String getTextoModelFileIA() {
         return textoModelFileIA;
     }
 
+    @Override
     public void setTextoModelFileIA(String textoModelFileIA) {
         this.textoModelFileIA = textoModelFileIA;
+    }
+
+    public void setAssuntos(List<AssuntosPersona> assuntos) {
+        this.assuntos = assuntos;
     }
 }

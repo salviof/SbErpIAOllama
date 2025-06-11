@@ -33,14 +33,13 @@ public enum FabAcaoIAOlhamaPersona implements ItfFabricaDeAcoesPersistencia {
     USUARIO_CTR_ALTERAR_STATUS,
     @InfoTipoAcaoGestaoEntidade(entidade = Persona.class, nomeAcao = "Gerenciar Personas")
     PERSONA_IA_MB_GESTAO,
-    @InfoTipoAcaoFormulario(campos = {CPPersona.id, CPPersona.nome, CPPersona.descricao, CPPersona.contexto, CPPersona.idioma, CPPersona.instrucoesadicionais, CPPersona.limitepalavras}) //TODO: Adicionar campos
+    @InfoTipoAcaoFormulario(campos = {CPPersona.id, CPPersona.nome, CPPersona.descricao, CPPersona.contexto, CPPersona.idioma, CPPersona.instrucoesadicionais, CPPersona.limitepalavras})
     PERSONA_IA_FRM_LISTAR,
-    @InfoTipoAcaoFormulario() //TODO: Adicionar campos
+    @InfoTipoAcaoFormulario()
     PERSONA_IA_FRM_NOVO,
-    @InfoTipoAcaoFormulario() //TODO: Adicionar campos
+    @InfoTipoAcaoFormulario()
     PERSONA_IA_FRM_EDITAR,
     PERSONA_IA_CTR_OBTER_RESPOSTA,
-    //    PERSONA_IA_CTR_OBTER_RESPOSTA_SEM_HISTORICO,
     PERSONA_IA_CTR_CHAT_SESSAO_CONVERSA,
     @InfoTipoAcaoController(comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO, fraseComunicação = "Tem certeza que deseja EXCLUIR o modelo de IA [nome]?")
     PERSONA_IA_CTR_REMOVER,
