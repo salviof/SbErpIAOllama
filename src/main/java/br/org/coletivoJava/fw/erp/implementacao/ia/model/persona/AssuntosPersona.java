@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @InfoObjetoSB(plural = "Assuntos de persona", tags = "Assunto de persona")
-public class AssuntosPersona extends EntidadeSimples {
+public class AssuntosPersona extends EntidadeSimplesORM {
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;

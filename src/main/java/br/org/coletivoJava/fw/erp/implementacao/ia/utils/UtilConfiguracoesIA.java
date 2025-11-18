@@ -3,7 +3,7 @@ package br.org.coletivoJava.fw.erp.implementacao.ia.utils;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.AssuntosPersona;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.FabAssuntosGenericos;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class UtilConfiguracoesIA {
         return prompt.toString().trim();
     }
 
-    public static String gerarPromptSystemComAssuntos(ItfUsuario pUsuario) {
+    public static String gerarPromptSystemComAssuntos(ComoUsuario pUsuario) {
         StringBuilder prompt = new StringBuilder();
         List<AssuntosPersona> assuntos = gerarAssuntosPadrao();
         prompt.append("Você é uma inteligência artificial treinada para responder sobre os seguintes assuntos relacionados ao nosso negócio:\n\n");

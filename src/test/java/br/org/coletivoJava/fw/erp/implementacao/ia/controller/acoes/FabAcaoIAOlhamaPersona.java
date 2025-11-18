@@ -5,7 +5,7 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes;
 
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
-import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersistencia;
+import com.super_bits.modulos.SBAcessosModel.fabricas.ComoFabricaDeAcoesPersistencia;
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
@@ -17,7 +17,7 @@ import org.coletivoJava.fw.projetos.erpColetivoJava.api.model.persona.CPPersona;
  * @author salvio
  */
 @InfoModulosIaOlhama(modulo = FabModulosIA.ERP_IA)
-public enum FabAcaoIAOlhamaPersona implements ItfFabricaDeAcoesPersistencia {
+public enum FabAcaoIAOlhamaPersona implements ComoFabricaDeAcoesPersistencia {
     @InfoTipoAcaoGestaoEntidade(entidade = UsuarioSB.class, nomeAcao = "Gerenciar usuários")
     USUARIO_MB_GESTAO,
     @InfoTipoAcaoFormulario()

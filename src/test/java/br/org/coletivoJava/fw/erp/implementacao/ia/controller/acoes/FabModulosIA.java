@@ -8,8 +8,8 @@ package br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes;
 import com.super_bits.modulos.SBAcessosModel.controller.FabMenuAdmin;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreGeradorDeID;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfModuloAcaoSistema;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ItfFabricaModulo;
-import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ComoFabricaModulo;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ComoFabricaMenu;
 
 /**
  *
@@ -21,7 +21,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
  *
  * @author Salvio Furbino
  */
-public enum FabModulosIA implements ItfFabricaModulo {
+public enum FabModulosIA implements ComoFabricaModulo {
 
     ERP_IA;
 
@@ -50,7 +50,7 @@ public enum FabModulosIA implements ItfFabricaModulo {
     }
 
     @Override
-    public ItfFabricaMenu getMenuPadrao() {
+    public ComoFabricaMenu getMenuPadrao() {
 
         return FabMenuAdmin.ROOT;
     }

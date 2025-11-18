@@ -1,11 +1,11 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios;
 
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoDaFabrica;
 
 
-public enum FabUsuarioPadrao implements ItfFabrica {
+public enum FabUsuarioPadrao implements ComoFabrica {
     @InfoObjetoDaFabrica(id = 1L, nomeObjeto = "Usuario_atendimento")
     USUARIO_ATENDIMENTO,
     @InfoObjetoDaFabrica(id = 2L,nomeObjeto = "Usuario_admin")

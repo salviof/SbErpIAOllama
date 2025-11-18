@@ -14,7 +14,7 @@ import br.org.coletivoJava.integracoes.ollama.api.chat.FabConfigOllama;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.ItfRespostaWebServiceSimples;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.erp.repositorioLinkEntidades.RepositorioLinkEntidadesGenerico;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import jakarta.json.JsonObject;
 
 import javax.annotation.Nullable;
@@ -37,7 +37,7 @@ public class IAOlhamaImpl extends RepositorioLinkEntidadesGenerico implements It
     }
 
     @Override
-    public String obterResposta(ItfPersona pPersona, ItfUsuario pUsuario, String pMensagem) {
+    public String obterResposta(ItfPersona pPersona, ComoUsuario pUsuario, String pMensagem) {
 
         String chaveSessao = buildChaveSessao(pPersona, pUsuario);
         String promptSystem = UtilConfiguracoesIA.gerarPromptSystemComAssuntos(pUsuario);
@@ -70,7 +70,7 @@ public class IAOlhamaImpl extends RepositorioLinkEntidadesGenerico implements It
     }
 
     @Override
-    public String limparSessao(ItfPersona itfPersona, ItfUsuario itfUsuario) throws ErroOllamaERP {
+    public String limparSessao(ItfPersona itfPersona, ComoUsuario itfUsuario) throws ErroOllamaERP {
 
         String caminhoArquivoJsonConversa = "/home/superBits/projetos/coletivoJava/source/erpColetivoJava/SbErpIAOllama/src/main/resources/"
                 + itfUsuario.getId() + "_" + itfPersona.getId() + ".json";
@@ -108,7 +108,7 @@ public class IAOlhamaImpl extends RepositorioLinkEntidadesGenerico implements It
         return "";
     }
 
-    private String buildChaveSessao(ItfPersona pPersona, ItfUsuario pUsuario) {
+    private String buildChaveSessao(ItfPersona pPersona, ComoUsuario pUsuario) {
         return pPersona.getId() + "_" + pUsuario.getId() + ".json";
     }
 
@@ -126,7 +126,7 @@ public class IAOlhamaImpl extends RepositorioLinkEntidadesGenerico implements It
         return Optional.empty();
     }
 
-    private List<AssuntosPersona> getAssuntosComplementaresDaInteracao(ItfPersona persona, ItfUsuario pUsuario, String pNovaInteracao) {
+    private List<AssuntosPersona> getAssuntosComplementaresDaInteracao(ItfPersona persona, ComoUsuario pUsuario, String pNovaInteracao) {
         List<AssuntosPersona> assuntosDetectados = new ArrayList<>();
         Optional<AssuntosPersona> assuntoOpt = detectarAssunto(pNovaInteracao);
         if (assuntoOpt.isPresent()) {

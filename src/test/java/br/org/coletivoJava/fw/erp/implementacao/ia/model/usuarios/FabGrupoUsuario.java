@@ -7,13 +7,13 @@ package br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios;
 
 import br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes.FabAcaoIAOlhamaPersona;
 import com.super_bits.modulos.SBAcessosModel.model.GrupoUsuarioSB;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
 /**
  *
  * @author desenvolvedor
  */
-public enum FabGrupoUsuario implements ItfFabrica {
+public enum FabGrupoUsuario implements ComoFabrica {
     USUARIO_CLIENTE, USUARIO_ATENDIMENTO, USUARIO_ADMINISTRADOR;
 
     @Override

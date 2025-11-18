@@ -14,7 +14,7 @@ import java.util.List;
 @InfoObjetoSB(plural = "Personas ", tags = "Persona", icone = "fa fa-users")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipoPersona")
-public class Persona extends EntidadeSimples implements ItfPersona {
+public class Persona extends EntidadeSimplesORM implements ItfPersona {
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;

@@ -13,7 +13,7 @@ import com.super_bits.modulos.SBAcessosModel.controller.resposta.RespostaComGest
 import com.super_bits.modulosSB.Persistencia.dao.ControllerAbstratoSBPersistencia;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfRespostaAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.ErroRegraDeNegocio;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonArrayBuilder;
@@ -38,7 +38,7 @@ public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
     }
 
     @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_CHAT_SESSAO_CONVERSA)
-    public static ItfRespostaAcaoDoSistema conversaChatComHistorico(Persona pPersona, String pMensagem, ItfUsuario pUsuario, String pPromptSystem) {
+    public static ItfRespostaAcaoDoSistema conversaChatComHistorico(Persona pPersona, String pMensagem, ComoUsuario pUsuario, String pPromptSystem) {
         return new RespostaComGestaoEMRegraDeNegocioPadrao(getNovaRespostaAutorizaChecaNulo(pPersona), pPersona) {
 
             @Override
@@ -67,7 +67,7 @@ public class ControllerIAPersonas extends ControllerAbstratoSBPersistencia {
     }
 
 //    @InfoAcaoIAPersona(acao = FabAcaoIAOlhamaPersona.PERSONA_IA_CTR_OBTER_RESPOSTA_SEM_HISTORICO)
-//    public static ItfRespostaAcaoDoSistema conversaChatSemHistorico(Persona pPersona, String pMensagem, ItfUsuario pUsuario,String pPromptSystem) {
+//    public static ItfRespostaAcaoDoSistema conversaChatSemHistorico(Persona pPersona, String pMensagem, ComoUsuario pUsuario,String pPromptSystem) {
 //        return new RespostaComGestaoEMRegraDeNegocioPadrao(getNovaRespostaAutorizaChecaNulo(pPersona), pPersona) {
 //            @Override
 //            public void regraDeNegocio() throws ErroRegraDeNegocio {

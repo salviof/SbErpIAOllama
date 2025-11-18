@@ -9,7 +9,7 @@ import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabGrupoUsuari
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabUsuarioPadrao;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreDataHora;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
 /**
  *
@@ -48,7 +48,7 @@ public class ConfigPersistenciaIa implements ItfConfigSBPersistencia {
     }
 
     @Override
-    public Class<? extends ItfFabrica>[] fabricasRegistrosIniciais() {
+    public Class<? extends ComoFabrica>[] fabricasRegistrosIniciais() {
         return new Class[]{
                 FabGrupoUsuario.class,
                 FabUsuarioPadrao.class

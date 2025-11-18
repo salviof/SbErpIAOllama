@@ -11,7 +11,7 @@ import br.org.coletivoJava.testes.erp.ConfigCoreApiErpIA;
 import br.org.coletivoJava.testes.erp.ConfigPersistenciaIa;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
 import testesFW.cucumber.CucumberSBTestes;
@@ -27,7 +27,7 @@ public class FluxoIAOllama extends TesteIntegracaoFuncionalidadeCucumber {
     public static IAOlhamaImpl OLHAMA= (IAOlhamaImpl) ERPIA.OLHAMA.getImplementacaoDoContexto();
     public static Persona PERSONA1_ADOLESCENTE = new Persona();
     public static Persona PERSONA2_IDOSO = new Persona();
-    public static ItfUsuario USUARIO_AUTENTICADO;
+    public static ComoUsuario USUARIO_AUTENTICADO;
 
     @Override
     protected void configAmbienteDesevolvimento() {

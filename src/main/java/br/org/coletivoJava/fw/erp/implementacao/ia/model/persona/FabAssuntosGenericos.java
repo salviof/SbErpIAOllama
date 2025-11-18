@@ -1,8 +1,8 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.model.persona;
 
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
-public enum FabAssuntosGenericos implements ItfFabrica {
+public enum FabAssuntosGenericos implements ComoFabrica {
     ASSUNTO_PRODUTO,
     ASSUNTO_SUPORTE,
     ASSUNTO_AGENDAMENTO;

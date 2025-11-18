@@ -3,7 +3,7 @@ package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.flux
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabUsuarioPadrao;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import cucumber.api.java.pt.Dado;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllamaAssunto;
 import org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.FluxoAssuntoOllama;
@@ -15,7 +15,7 @@ public class A_Dado_que_o_usuario_esta_logado_no_sistema {
 
     @Dado(EtapasFluxoOllamaAssunto.DADO_QUE_O_USUARIO_ESTA_LOGADO_NO_SISTEMA)
     public void implementacaoEtapa() {
-        USUARIO_AUTENTICADO = (ItfUsuario) FabUsuarioPadrao.USUARIO_ATENDIMENTO.getRegistro();
+        USUARIO_AUTENTICADO = (ComoUsuario) FabUsuarioPadrao.USUARIO_ATENDIMENTO.getRegistro();
 
         SBCore.getServicoSessao().logarEmailESenha(USUARIO_AUTENTICADO.getEmail(), USUARIO_AUTENTICADO.getSenha());
         SBCore.getServicoSessao().getSessaoAtual().getUsuario();
