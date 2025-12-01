@@ -5,7 +5,7 @@ import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.Persistencia.dao.UtilSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreJson;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCJson;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfResposta;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllama;
 import cucumber.api.java.pt.Entao;

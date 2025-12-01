@@ -6,7 +6,7 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.controller.acoes;
 
 import com.super_bits.modulos.SBAcessosModel.controller.FabMenuAdmin;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreGeradorDeID;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCGeradorDeID;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfModuloAcaoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ComoFabricaModulo;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ComoFabricaMenu;
@@ -40,7 +40,7 @@ public enum FabModulosIA implements ComoFabricaModulo {
                 throw new AssertionError(this.name());
 
         }
-        modulo.setId(UtilSBCoreGeradorDeID.gerarIdUnicoObejtoVinculadoAFabrica(modulo));
+        modulo.setId(UtilCRCGeradorDeID.gerarIdUnicoObejtoVinculadoAFabrica(modulo));
         return modulo;
     }
 
