@@ -3,7 +3,7 @@ package org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.cucumber.flux
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.usuarios.FabUsuarioPadrao;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
 import cucumber.api.java.pt.Dado;
 import org.coletivoJava.fw.projetos.erpColetivoJava.api.EtapasFluxoOllamaAssunto;
 import org.coletivoJava.fw.projetos.erpColetivoJava.implementacao.FluxoAssuntoOllama;

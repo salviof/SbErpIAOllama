@@ -1,7 +1,8 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.model.persona;
 
 import br.org.coletivoJava.fw.api.erp.ia.escopo.ItfPersona;
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
+
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimplesORM;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampoValorLogico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
@@ -15,6 +16,7 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipoPersona")
 public class Persona extends EntidadeSimplesORM implements ItfPersona {
+
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;
@@ -66,8 +68,10 @@ public class Persona extends EntidadeSimplesORM implements ItfPersona {
     private String textoModelFileIA;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "persona_assunto", joinColumns = {@JoinColumn(name = "persona_id")},
-            inverseJoinColumns = {@JoinColumn(name = "assunto_id")})
+    @JoinTable(name = "persona_assunto", joinColumns = {
+        @JoinColumn(name = "persona_id")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "assunto_id")})
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS)
     private List<AssuntosPersona> assuntos;
 

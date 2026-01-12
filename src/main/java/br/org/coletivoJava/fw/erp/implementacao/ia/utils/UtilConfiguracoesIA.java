@@ -3,7 +3,7 @@ package br.org.coletivoJava.fw.erp.implementacao.ia.utils;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.AssuntosPersona;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.FabAssuntosGenericos;
 import br.org.coletivoJava.fw.erp.implementacao.ia.model.persona.Persona;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
 
 import java.util.ArrayList;
 import java.util.List;

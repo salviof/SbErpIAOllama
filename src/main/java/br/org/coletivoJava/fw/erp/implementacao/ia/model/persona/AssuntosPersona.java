@@ -1,6 +1,6 @@
 package br.org.coletivoJava.fw.erp.implementacao.ia.model.persona;
 
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimplesORM;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
@@ -8,11 +8,11 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoA
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 @InfoObjetoSB(plural = "Assuntos de persona", tags = "Assunto de persona")
 public class AssuntosPersona extends EntidadeSimplesORM {
+
     @Id
     @InfoCampo(tipo = FabTipoAtributoObjeto.ID)
     private Long id;

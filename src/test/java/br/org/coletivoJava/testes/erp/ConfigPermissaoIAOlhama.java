@@ -7,12 +7,16 @@ package br.org.coletivoJava.testes.erp;
 
 import br.org.coletivoJava.fw.erp.implementacao.ia.controller.ControllerIAPersonas;
 import com.super_bits.modulos.SBAcessosModel.ConfigPermissoesAcessoModelAbstrato;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ErroDadosDeContatoUsuarioNaoEncontrado;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.token.ItfTokenAcessoDinamico;
+import com.super_bits.modulosSB.SBCore.modulos.erp.FabTipoAgenteOrganizacao;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimplesSomenteLeitura;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfGrupoUsuario;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
-import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenusDeSessao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoEntidadeSimplesSomenteLeitura;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoGrupoUsuario;
+
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.contato.ComoContatoHumano;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ComoMenusDeSessao;
 
 import org.coletivojava.fw.api.objetoNativo.view.menu.MenuSBFW;
 import org.coletivojava.fw.api.objetoNativo.view.menu.MenusDaSessao;
@@ -38,7 +42,7 @@ public class ConfigPermissaoIAOlhama extends ConfigPermissoesAcessoModelAbstrato
     }
 
     @Override
-    public ItfMenusDeSessao definirMenu(ItfGrupoUsuario pGrupo) {
+    public ComoMenusDeSessao definirMenu(ComoGrupoUsuario pGrupo) {
 
         return new MenusDaSessao(new MenuSBFW());
 

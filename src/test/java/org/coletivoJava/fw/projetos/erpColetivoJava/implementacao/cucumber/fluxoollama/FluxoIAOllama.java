@@ -11,7 +11,7 @@ import br.org.coletivoJava.testes.erp.ConfigCoreApiErpIA;
 import br.org.coletivoJava.testes.erp.ConfigPersistenciaIa;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.ComoUsuario;
 import cucumber.api.CucumberOptions;
 import org.junit.runner.RunWith;
 import testesFW.cucumber.CucumberSBTestes;
